@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-k</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800" rel="stylesheet">
+    <link rel="icon" href="Content\Images\Icon.png" type="image/x-icon" />
+
+</head>
+
+<body>
+    <nav style="margin-bottom: 200px;"><a href="index.html"><img src="Content\Images\Logo.png" alt="Logo Image"
+                style="margin-left: 25px; width: 180px;" /></a>
+        <div class="NavLinksDiv"><a href="index.html" class="NavLinks">Home</a><a href="Projects.html"
+                class="NavLinks">Updates</a><a href="Certificates.html" class="NavLinks">Certificates</a><a
+                href="Drums.html" class="NavLinks">Drums</a><a href="Contact.html" class="NavLinks">Contact</a></div>
+    </nav>
+    <main>
+        <section id="AboutMe"><img src="Content\Images\ProfileImage.jpg" alt="My photo"
+                style="margin-left: 25px; margin-right: 60px; width: 200px;" />
+            <div>
+                <h1>About me:</h1>
+                <p>Hi, my name is Khaled, i'm still a student but have professional software skills.<br> I can design
+                    websites, games, programs and robots.<br> I also play drums and attend programming courses.<br> Hope
+                    you
+                    enjoy my work 🙂</p>
+            </div>
+
+        </section>
+        <section id="Skills">
+            <div class="Skill">
+                <h1>Robotics</h1><br>
+                <p>I started doing robotics since 11 and i like creating machines to automate some daily tasks.</p><a
+                    href="Projects.html">Learn more</a>
+            </div>
+            <div class="Skill">
+                <h1>Programming</h1><br>
+                <p>I take programming courses and make projects to share them here.</p><a href="Projects.html">Learn
+                    more</a>
+            </div>
+            <div class="Skill">
+                <h1>Drums</h1><br>
+                <p>I play drums oftenly during my spare time and i'm a good drummer.</p><a href="Drums.html">Learn
+                    more</a>
+            </div>
+        </section>
+        <section id="Projects">
+
+            <section id="Recent">
+                <h1 style="margin-left: 20px;">Projects: </h1>
+                <article><img src="Content\ProjectFiles\telephone_esp32_sim800l\img1.jpg" alt="Project Image"
+                        style="margin: 40px; width: 30%;  height: auto;">
+                    <div>
+                        <h1>Phone </h1><br>
+                        <p>The phone can send and receive calls and messages, it has a calculator, a game and a function
+                            to
+                            launch a cyber attack.</p><a href="Phone.html">Learn more</a>
+                    </div>
+                </article>
+
+                <article><img src="Content\ProjectFiles\alarme_arduino_EEPROM\img3.jpg" alt="Project Image"
+                        style="margin: 40px; width: 30%;  height: auto; ">
+                    <div>
+                        <h1>Alarm </h1><br>
+                        <p>the alarm sounds when a movement is detected and it only stops when it is deactivated by
+                            means of a double security (an RFID tag and a password).</p><a href="Alarm.html">Learn
+                            more</a>
+                    </div>
+                </article>
+                <a href="Projects.html"><button type="button">More Projects</button></a>
+
+            </section>
+        </section>
+    </main>
+    <footer>
+        <h2>All Rights Reserved 2022&#169;</h2>
+        <h2>contact@blog-k.tn</h2><a href="index.html"> Home </a>
+        <a href="Projects.html"> Updates </a><a href="Certificates.html"> Certificates </a><a href="Drums.html"> Drums
+        </a><a href="Contact.html"> Contact </a>
+    </footer>
+    <script>
+const observerNav = new IntersectionObserver(entries => {
+  entries.forEach(entry => {  
+    if(entry.isIntersecting){
+      let List = document.querySelector("nav").childNodes
+      List[0].classList.add("fadeInLeft")
+      List[2].classList.add("fadeInDown")
+    }
+
+  })
+
+})
+const observerAboutMe = new IntersectionObserver(entries => {
+  entries.forEach(entry => {  
+    if(entry.isIntersecting){
+      let List = document.querySelector("#AboutMe").childNodes
+      List[0].classList.add("fadeInLeft")
+      List[2].classList.add("fadeInTop")
+    }
+
+  })
+
+})
+const observerSkills = new IntersectionObserver(entries => {
+  entries.forEach(entry => {  
+    if(entry.isIntersecting){
+      let List = document.querySelectorAll(".Skill")
+      List[0].classList.add("fadeInLeft")
+      List[1].classList.add("fadeInTop")
+      List[2].classList.add("fadeInRight")
+    }
+
+  })
+
+})
+const observerProjects = new IntersectionObserver(entries => {
+  entries.forEach(entry => {  
+    if(entry.isIntersecting){
+      let List = document.querySelector("#Recent").childNodes
+      console.log(List)
+      List[1].classList.add("fadeInRight")
+      List[3].classList.add("fadeInRight")
+      List[5].classList.add("fadeInRight")
+    }
+
+  })
+
+})
+const observerFooter = new IntersectionObserver(entries => {
+  entries.forEach(entry => {  
+    if(entry.isIntersecting){
+      document.querySelector("footer").classList.add("fadeInDown")
+    }
+
+  })
+
+})
+
+observerNav.observe(document.querySelector("nav"))
+observerAboutMe.observe(document.querySelector("#AboutMe"))
+observerSkills.observe(document.querySelector("#Skills"))
+observerProjects.observe(document.querySelector("#Recent"))
+observerFooter.observe(document.querySelector("footer"))
+
+
+
+
+    </script>
+
+</body>
+
+</html>

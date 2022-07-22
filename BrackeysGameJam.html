@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog-k</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animations.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800" rel="stylesheet">
+  <link rel="icon" href="Content\Images\Icon.png" type="image/x-icon" />
+
+</head>
+
+<body>
+  <nav style="margin-bottom: 200px;"><a href="index.html"><img src="Content\Images\Logo.png" alt="Logo Image"
+    style="margin-left: 25px; width: 180px;" /></a>
+<div class="NavLinksDiv"><a href="index.html" class="NavLinks">Home</a><a href="Projects.html"
+    class="NavLinks">Updates</a><a href="Certificates.html" class="NavLinks">Certificates</a><a
+    href="Drums.html" class="NavLinks">Drums</a><a href="Contact.html" class="NavLinks">Contact</a></div>
+</nav>
+  <main>
+    <section class="Page">
+      <h1 style="margin-left: 20px; font-size: 3em;" id="HeadTitle">Brackeys game jam 2021: </h1>
+      <p>I created during a week a game with <i>Matty1303</i>, britich friend of mine for a game jam. A very good experience i would recommand.</p>
+
+
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="https://img.itch.zone/aW1hZ2UvMTE3MzE0My82ODcwNzMxLnBuZw==/original/a3AB6b.png" style="height:562px;">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="https://img.itch.zone/aW1hZ2UvMTE3MzE0My82ODcwNzMyLnBuZw==/original/Ojvh7o.png" style="height:562px;">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="https://img.itch.zone/aW1hZ2UvMTE3MzE0My82ODcwNzMzLnBuZw==/original/vKvMho.png" style="height:562px;">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+      <a href="https://matty1301.itch.io/dungeon-of-chaos"> Open game</a>
+    </section>
+
+    
+  </main>
+
+  <footer>
+    <h2>All Rights Reserved 2022&#169;</h2>
+    <h2>contact@blog-k.tn</h2><a href="index.html"> Home </a>
+    <a href="Projects.html"> Updates </a><a href="Certificates.html"> Certificates </a><a href="Drums.html"> Drums
+    </a><a href="Contact.html"> Contact </a>
+  </footer>
+
+  
+  <script src="Slide.js"> </script>
+  <script>const observerNav = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+      if(entry.isIntersecting){
+        let List = document.querySelector("nav").childNodes
+        List[0].classList.add("fadeInLeft")
+        List[2].classList.add("fadeInDown")
+      }
+  
+    })
+  
+  })
+  const observerHeadTitle = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+      if(entry.isIntersecting){
+        document.querySelector("#HeadTitle").classList.add("fadeInLeft")
+      }
+  
+    })
+  
+  })
+  
+  const observerSecondTitle = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+      if(entry.isIntersecting){
+        document.querySelector("#SecondTitle").classList.add("fadeInLeft")
+      }
+  
+    })
+  
+  })
+  
+  const observerP = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+      if(entry.isIntersecting){
+        entry.target.classList.remove("fadeInRight")
+        entry.target.classList.add("fadeInRight")
+      }
+  
+    })
+  
+  })
+  
+  const observerSlide = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+      if(entry.isIntersecting){
+        entry.target.classList.remove("fadeInTop")
+        entry.target.classList.add("fadeInTop")
+      }
+  
+    })
+  
+  })
+  
+  const observerFooter = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+      if(entry.isIntersecting){
+        document.querySelector("footer").classList.add("fadeInDown")
+      }
+  
+    })
+  
+  })
+  
+  observerNav.observe(document.querySelector("nav"))
+  observerHeadTitle.observe(document.querySelector("#HeadTitle"))
+  observerP.observe(document.querySelector("p"))
+  observerSlide.observe(document.querySelector(".slideshow-container"))
+  observerFooter.observe(document.querySelector("footer"))</script>
+</body>
+
+</html>

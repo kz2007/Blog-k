@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-k</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800" rel="stylesheet">
+    <link rel="icon" href="Content\Images\Icon.png" type="image/x-icon" />
+
+</head>
+
+<body>
+    <nav style="margin-bottom: 200px;"><a href="index.html"><img src="Content\Images\Logo.png" alt="Logo Image"
+        style="margin-left: 25px; width: 180px;" /></a>
+<div class="NavLinksDiv"><a href="index.html" class="NavLinks">Home</a><a href="Projects.html"
+        class="NavLinks">Updates</a><a href="Certificates.html" class="NavLinks">Certificates</a><a
+        href="Drums.html" class="NavLinks">Drums</a><a href="Contact.html" class="NavLinks">Contact</a></div>
+</nav>
+    <main>
+        <h1 style="margin-left: 20px; font-size: 3em" id="HeadTitle">Contact me:</h1>
+        <section id="contact">
+            <form name="Form">
+                <label>Name</label>
+                <input type="text" placeholder="Enter your name" id="name"><br>
+                <label>Email</label>
+                <input type="text" placeholder="Enter your email" id="email"><br>
+                <label>Subject</label>
+                <input type="text" placeholder="Enter your subject" id="subject"><br>
+                <label>Content</label>
+                <textarea placeholder="Some text..." id="content"></textarea><br>
+                <button type="submit" value="Submit" onclick="Match()">Send message</button>
+            </form>
+        </section>
+
+
+
+        <h1 style="margin-left: 20px"  id="SecondTitle">or just send an email to this adress: <i>contact@blog-k.tn</i></h1>
+    </main>
+    <footer>
+        <h2>All Rights Reserved 2022&#169;</h2>
+        <h2>contact@blog-k.tn</h2><a href="#"> Home </a>
+        <a href="Projects.html"> Updates </a><a href="Certificates.html"> Certificates </a><a href="Drums.html"> Drums
+        </a><a href="Contact.html"> Contact </a>
+    </footer>
+<script src="form.js"></script>
+<script>const observerNav = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+      if(entry.isIntersecting){
+        let List = document.querySelector("nav").childNodes
+        List[0].classList.add("fadeInLeft")
+        List[2].classList.add("fadeInDown")
+      }
+  
+    })
+  
+  })
+  const observerHeadTitle = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+      if(entry.isIntersecting){
+        document.querySelector("#HeadTitle").classList.add("fadeInLeft")
+      }
+  
+    })
+  
+  })
+
+  const observerSecondTitle = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+      if(entry.isIntersecting){
+        document.querySelector("#SecondTitle").classList.add("fadeInLeft")
+      }
+  
+    })
+  
+  })
+
+  const observerForm = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+      if(entry.isIntersecting){
+        entry.target.classList.remove("fadeInRight")
+        entry.target.classList.add("fadeInRight")
+      }
+  
+    })
+  
+  })
+  
+  const observerFooter = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+      if(entry.isIntersecting){
+        document.querySelector("footer").classList.add("fadeInDown")
+      }
+  
+    })
+  
+  })
+  
+  observerNav.observe(document.querySelector("nav"))
+  observerHeadTitle.observe(document.querySelector("#HeadTitle"))
+
+  observerForm.observe(document.querySelectorAll("form")[0])
+  observerSecondTitle.observe(document.querySelector("#SecondTitle"))
+  observerFooter.observe(document.querySelector("footer"))</script>
+</body>
+
+</html>
